@@ -11,15 +11,15 @@ angular.module("myApp", [])
         };
 
         $scope.parks = {
-            code: ['pinn'], //update
-            name: ['Pinnacles'], //update
+            code: ['pinn', 'josh'], //update
+            name: ['Pinnacles', 'Joshua Tree'], //update
             images: {
                 pinn: [1, 2, 3, 4, 5, 6],
-                josh: [] //update
+                josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
             }
         };
 
-        $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3'];
+        $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4', '6', '6'];
 
         $scope.current = {
             code: '',
