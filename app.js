@@ -11,11 +11,20 @@ angular.module("myApp", [])
         };
 
         $scope.parks = {
-            code: ['pinn', 'josh'], //update
-            name: ['Pinnacles', 'Joshua Tree'], //update
+            code: ['pinn', 'josh', 'gran'], //update
+            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon'], //update
             images: {
                 pinn: [1, 2, 3, 4, 5, 6],
-                josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+                josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+                gran: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+            }
+        };
+
+        $scope.places = {
+            code: ['ante'], //update
+            name: ['Antelope Canyon'], //update
+            images: {
+                ante: [1]
             }
         };
 
@@ -24,12 +33,14 @@ angular.module("myApp", [])
         $scope.current = {
             code: '',
             name: '',
+            suffix:'',
             photo: 1
         };
 
-        $scope.goToGallery = function (code, name) {
+        $scope.goToGallery = function (code, name, suffix) {
             $scope.current.code = code;
             $scope.current.name = name;
+            $scope.current.suffix = suffix;
             $scope.include('content/gallery.html');
         };
 
