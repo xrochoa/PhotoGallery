@@ -6,7 +6,7 @@
         </div>
 
         <div class="col-xs-4 col-sm-4 thumb" ng-repeat="code in places.code track by $index">
-            <a class="thumbnail" ng-click="goToGallery(code, places.name[$index],'')">
+            <a class="thumbnail" ng-click="goToGallery(code, places.name[$index],'','content/places.html')">
                 <img class="img-responsive img" ng-src="img/{{code}}/thumb/1.jpg" alt="">
             </a>
             <span>{{places.name[$index]}}</span>

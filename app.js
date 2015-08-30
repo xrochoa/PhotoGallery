@@ -11,21 +11,22 @@ angular.module("myApp", [])
         };
 
         $scope.parks = {
-            code: ['pinn', 'josh', 'gran'], //update
-            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon'], //update
-            images: {
-                pinn: [1, 2, 3, 4, 5, 6],
-                josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-                gran: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-            }
+            code: ['pinn', 'josh', 'gran', 'mesa'], //update
+            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde'], //update
         };
 
         $scope.places = {
             code: ['ante'], //update
-            name: ['Antelope Canyon'], //update
-            images: {
-                ante: [1]
-            }
+            name: ['Antelope Canyon'] //update
+        };
+
+        $scope.images = {
+            pinn: [1, 2, 3, 4, 5, 6],
+            josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+            gran: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+            ante: [1, 2, 3, 4, 5, 6],
+            mesa: [1, 2, 3, 4, 5, 6]
+
         };
 
         $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4', '6', '6'];
@@ -33,14 +34,17 @@ angular.module("myApp", [])
         $scope.current = {
             code: '',
             name: '',
-            suffix:'',
-            photo: 1
+            suffix: '',
+            link: '',
+            photo: ''
+
         };
 
-        $scope.goToGallery = function (code, name, suffix) {
+        $scope.goToGallery = function (code, name, suffix, link) {
             $scope.current.code = code;
             $scope.current.name = name;
             $scope.current.suffix = suffix;
+            $scope.current.link = link;
             $scope.include('content/gallery.html');
         };
 
