@@ -11,21 +11,25 @@ angular.module("myApp", [])
         };
 
         $scope.parks = {
-            code: ['pinn', 'josh', 'gran', 'mesa'], //update
-            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde'], //update
+            code: ['pinn', 'josh', 'gran', 'mesa', 'blac', 'arch'], //update
+            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde', 'Black Canyon of the Gunnison', 'Arches'], //update
         };
 
         $scope.places = {
-            code: ['ante'], //update
-            name: ['Antelope Canyon'] //update
+            code: ['ante', 'monu'], //update
+            name: ['Antelope Canyon', 'Monument Valley Tribal Park'] //update
         };
 
         $scope.images = {
-            pinn: [1, 2, 3, 4, 5, 6],
-            josh: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            gran: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
-            ante: [1, 2, 3, 4, 5, 6],
-            mesa: [1, 2, 3, 4, 5, 6]
+            pinn: ['', '', '', '', '', ''],
+            josh: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+            gran: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
+            ante: ['', '', '', '', '', ''],
+            mesa: ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House'],
+            blac: ['', '', '', '', '', ''],
+            monu: ['', '', '', '', '', ''],
+            arch: ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch']
+
 
         };
 

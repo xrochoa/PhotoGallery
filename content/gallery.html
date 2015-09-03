@@ -11,8 +11,10 @@
 
         <div class="col-xs-{{gallery[$index]}} col-sm-4 thumb" ng-repeat="image in images[current.code] track by $index">
             <a class="thumbnail" ng-click="goToPhoto($index)">
-                <img class="img-responsive img" ng-src="img/{{current.code}}/thumb/{{image}}.jpg" alt="">
+                <img class="img-responsive img" ng-src="img/{{current.code}}/thumb/{{$index + 1}}.jpg" alt="">
             </a>
+            <span class="hidden-xs">{{images[current.code][$index]}}</span>
+
         </div>
     </div>
 
