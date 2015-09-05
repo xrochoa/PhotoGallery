@@ -16,8 +16,8 @@ angular.module("myApp", [])
         };
 
         $scope.places = {
-            code: ['ante', 'monu'], //update
-            name: ['Antelope Canyon', 'Monument Valley Tribal Park'] //update
+            code: ['ante', 'hors', 'monu'], //update
+            name: ['Antelope Canyon', 'Horseshoe', 'Monument Valley Tribal Park'] //update
         };
 
         $scope.images = {
@@ -28,7 +28,8 @@ angular.module("myApp", [])
             mesa: ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House'],
             blac: ['', '', '', '', '', ''],
             monu: ['', '', '', '', '', ''],
-            arch: ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch']
+            arch: ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch'],
+            hors: ['Horseshoe Overlook']
 
 
         };
