@@ -1,14 +1,5 @@
-angular.module("myApp", [])
+angular.module("myApp", ['ngRoute', 'ngAnimate'])
     .controller("myController", function ($scope) {
-        $scope.templateUrl = 'content/quote.html';
-
-        $scope.include = function (url) {
-            $scope.templateUrl = url;
-            $scope.myStyle = {
-                'background': '#f5f9fa'
-            };
-
-        };
 
         $scope.parks = {
             code: ['pinn', 'josh', 'gran', 'mesa', 'blac', 'arch'], //update
@@ -37,26 +28,61 @@ angular.module("myApp", [])
         $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4', '6', '6'];
 
         $scope.current = {
-            code: '',
-            name: '',
-            suffix: '',
-            link: '',
-            photo: ''
+            code: 'arch',
+            name: 'Arches',
+            suffix: 'National Park',
+            photo: 1
 
         };
 
-        $scope.goToGallery = function (code, name, suffix, link) {
+        $scope.whiteBackground = function () {
+            $scope.myStyle = {
+                'background': '#f5f9fa'
+            };
+        };
+
+        $scope.updateGallery = function (code, name, suffix) {
             $scope.current.code = code;
             $scope.current.name = name;
             $scope.current.suffix = suffix;
-            $scope.current.link = link;
-            $scope.include('content/gallery.html');
+            $scope.whiteBackground();
         };
 
-        $scope.goToPhoto = function (photo) {
+        $scope.updatePhoto = function (photo) {
             $scope.current.photo = photo + 1;
-            $scope.include('content/full.html');
+        };
+
+        $scope.next = function () {
+            if ($scope.current.photo < $scope.images[$scope.current.code].length) {
+                $scope.current.photo = $scope.current.photo + 1;
+            } else {
+                $scope.current.photo = 1;
+            }
         };
 
 
-    });
+    })
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when('/main', {
+                templateUrl: 'content/quote.html'
+            })
+            .when('/nps', {
+                templateUrl: 'content/parks.html'
+            })
+            .when('/oip', {
+                templateUrl: 'content/places.html'
+            })
+            .when('/gallery', {
+                templateUrl: 'content/gallery.html'
+            })
+            .when('/full', {
+                templateUrl: 'content/full.html'
+            })
+            .when('/about', {
+                templateUrl: 'content/about.html'
+            })
+            .otherwise({
+                redirectTo: '/main'
+            });
+    }]);
