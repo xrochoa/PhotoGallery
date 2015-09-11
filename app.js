@@ -1,14 +1,20 @@
 angular.module("myApp", ['ngRoute', 'ngAnimate'])
-    .controller("myController", function ($scope) {
+    .controller('myCtrl', ['$scope', '$routeParams', '$rootScope', function ($scope, $routeParams, $rootScope) {
 
-        $scope.parks = {
-            code: ['pinn', 'josh', 'gran', 'mesa', 'blac', 'arch'], //update
-            name: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde', 'Black Canyon of the Gunnison', 'Arches'], //update
-        };
+        $scope.galleries = {
+            nps: {
+                name: 'National Parks',
+                code: ['pinn', 'josh', 'gran', 'mesa', 'blac', 'arch', 'cany'],
+                places: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde', 'Black Canyon of the Gunnison', 'Arches', 'Canyonlands'],
+                suffix: 'National Park'
+            },
 
-        $scope.places = {
-            code: ['ante', 'hors', 'monu'], //update
-            name: ['Antelope Canyon', 'Horseshoe', 'Monument Valley Tribal Park'] //update
+            oip: {
+                name: 'Other Inspiring Places',
+                code: ['ante', 'hors', 'nava', 'monu', 'natu'], //update
+                places: ['Antelope Canyon', 'Horseshoe', 'Navajo National Monument', 'Monument Valley Tribal Park', 'Natural Bridges National Monument'],
+                suffix: ''
+            }
         };
 
         $scope.images = {
@@ -20,69 +26,64 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             blac: ['', '', '', '', '', ''],
             monu: ['', '', '', '', '', ''],
             arch: ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch'],
-            hors: ['Horseshoe Overlook']
+            hors: ['Horseshoe Overlook'],
+            cany: ['Monument Basin', 'Shafer Canyon Overlook', 'Mesa Arch', 'Aztec Butte Grainery', 'Whale Rock', 'Upheaval Dome', 'Green River Overlook', 'Soda Springs Basin', 'Grand View Point Overlook', 'Superbowl Campground', 'Big Spring Canyon Overlook', 'Big Spring Canyon Overlook', 'Pothole Point', 'Elephant Hill Trail', 'Devils Kitchen'],
+            natu: ['Sipapu Bridge', 'Owachomo Bridge'],
+            nava: ['Betatakin/Talastima Cliff Dwelling', 'Stormy Night']
 
 
         };
 
         $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4', '6', '6'];
 
-        $scope.current = {
-            code: 'arch',
-            name: 'Arches',
-            suffix: 'National Park',
-            photo: 1
-
-        };
-
-        $scope.whiteBackground = function () {
-            $scope.myStyle = {
-                'background': '#f5f9fa'
-            };
-        };
-
-        $scope.updateGallery = function (code, name, suffix) {
-            $scope.current.code = code;
-            $scope.current.name = name;
-            $scope.current.suffix = suffix;
-            $scope.whiteBackground();
-        };
-
-        $scope.updatePhoto = function (photo) {
-            $scope.current.photo = photo + 1;
-        };
+        $scope.params = $routeParams;
 
         $scope.next = function () {
-            if ($scope.current.photo < $scope.images[$scope.current.code].length) {
-                $scope.current.photo = $scope.current.photo + 1;
+            if ($scope.params.photoId < $scope.images[$scope.params.codeId].length) {
+                $scope.nextPhoto = (Number($scope.params.photoId) + 1).toString();
             } else {
-                $scope.current.photo = 1;
+                $scope.nextPhoto = 1;
             }
         };
 
-
-    })
+    }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/main', {
                 templateUrl: 'content/quote.html'
             })
-            .when('/nps', {
-                templateUrl: 'content/parks.html'
+            .when('/about', {
+                templateUrl: 'content/about.html',
             })
-            .when('/oip', {
-                templateUrl: 'content/places.html'
-            })
-            .when('/gallery', {
+            .when('/:galleryId', {
                 templateUrl: 'content/gallery.html'
             })
-            .when('/full', {
-                templateUrl: 'content/full.html'
+            .when('/:galleryId/:codeId', {
+                templateUrl: 'content/photos.html'
             })
-            .when('/about', {
-                templateUrl: 'content/about.html'
+            .when('/:galleryId/:codeId/:photoId', {
+                templateUrl: 'content/full.html'
             })
             .otherwise({
                 redirectTo: '/main'
             });
-    }]);
+    }])
+    .run(function ($rootScope, $location) {
+        $rootScope.$watch(function () {
+                return $location.path();
+            },
+            function (a) {
+                if (a === '/main') {
+                    $rootScope.myStyle = {
+                        'background': 'url("img/arch/1.jpg") no-repeat center center fixed',
+                        'background-size': 'cover'
+
+                    };
+                } else {
+                    $rootScope.myStyle = {
+                        'background': '#f5f9fa'
+                    };
+                }
+                // show loading div, etc...
+            });
+    });

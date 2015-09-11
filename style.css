@@ -5,6 +5,7 @@ html {
     background-size: cover;
     -o-background-size: cover;
 }
+
 body {
     font-family: 'Open Sans Condensed', sans-serif !important;
     background-color: #f5f9fa;
@@ -111,7 +112,7 @@ img {
 }
 .fade {
     position: absolute;
-    top: 60px;
+    top: 0px;
     left: 0;
     right: 0;
     height: 100%;
@@ -133,4 +134,7 @@ img {
 }
 .fade.ng-leave-active {
     opacity: 0;
+}
+.relative {
+    position: relative;
 }

@@ -1,12 +1,5 @@
-<!-- Content -->
-<div class="container-fluid">
-
-    <div class="row-fluid no-gutter">
-        <div class="col-xs-12 col-sm-12 thumb">
-            <a ng-click="next()">
-                <img ng-src="img/{{current.code}}/{{current.photo}}.jpg" alt="">
-            </a>
-        </div>
-    </div>
-
+<div class="col-xs-12 col-sm-12 thumb">
+    <a ng-click="next()" href="#nps/{{params.codeId}}/{{nextPhoto}}">
+        <img ng-src="img/{{params.codeId}}/{{params.photoId}}.jpg" alt="">
+    </a>
 </div>
