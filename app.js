@@ -4,32 +4,33 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
-                code: ['pinn', 'josh', 'gran', 'mesa', 'blac', 'arch', 'cany'],
-                places: ['Pinnacles', 'Joshua Tree', 'Grand Canyon', 'Mesa Verde', 'Black Canyon of the Gunnison', 'Arches', 'Canyonlands'],
+                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc']],
                 suffix: 'National Park'
             },
 
             oip: {
                 name: 'Other Inspiring Places',
-                code: ['ante', 'hors', 'nava', 'monu', 'natu'], //update
-                places: ['Antelope Canyon', 'Horseshoe', 'Navajo National Monument', 'Monument Valley Tribal Park', 'Natural Bridges National Monument'],
+                code: [['ante', 'hors', 'nava'], ['monu', 'natu', 'pink']], //update
                 suffix: ''
             }
         };
 
         $scope.images = {
-            pinn: ['', '', '', '', '', ''],
-            josh: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-            gran: ['', '', '', '', '', '', '', '', '', '', '', '', '', '', ''],
-            ante: ['', '', '', '', '', ''],
-            mesa: ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House'],
-            blac: ['', '', '', '', '', ''],
-            monu: ['', '', '', '', '', ''],
-            arch: ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch'],
-            hors: ['Horseshoe Overlook'],
-            cany: ['Monument Basin', 'Shafer Canyon Overlook', 'Mesa Arch', 'Aztec Butte Grainery', 'Whale Rock', 'Upheaval Dome', 'Green River Overlook', 'Soda Springs Basin', 'Grand View Point Overlook', 'Superbowl Campground', 'Big Spring Canyon Overlook', 'Big Spring Canyon Overlook', 'Pothole Point', 'Elephant Hill Trail', 'Devils Kitchen'],
-            natu: ['Sipapu Bridge', 'Owachomo Bridge'],
-            nava: ['Betatakin/Talastima Cliff Dwelling', 'Stormy Night']
+            pinn: ['Pinnacles', ['', '', '', '', '', '']],
+            josh: ['Joshua Tree', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
+            gran: ['Grand Canyon', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
+            ante: ['Antelope Canyon', ['', '', '', '', '', '']],
+            mesa: ['Mesa Verde', ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House']],
+            blac: ['Black Canyon of the Gunnison', ['', '', '', '', '', '']],
+            monu: ['Monument Valley Tribal Park', ['', '', '', '', '', '']],
+            arch: ['Arches', ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch']],
+            hors: ['Horseshoe', ['Horseshoe Overlook']],
+            cany: ['Canyonlands', ['Monument Basin', 'Shafer Canyon Overlook', 'Mesa Arch', 'Aztec Butte Grainery', 'Whale Rock', 'Upheaval Dome', 'Green River Overlook', 'Soda Springs Basin', 'Grand View Point Overlook', 'Superbowl Campground', 'Big Spring Canyon Overlook', 'Big Spring Canyon Overlook', 'Pothole Point', 'Elephant Hill Trail', 'Devils Kitchen']],
+            natu: ['Natural Bridges National Monument', ['Sipapu Bridge', 'Owachomo Bridge']],
+            nava: ['Navajo National Monument', ['Betatakin/Talastima Cliff Dwelling', 'Stormy Night']],
+            capi: ['Capitol Reef', ['Navajo Butte', 'Behunin Cabin', 'Capitol Dome', 'Petroglyphs', 'The Castle', 'Scenic Drive', 'Scenic Drive', 'Scenic Drive', 'Chimney Rock']],
+            bryc: ['Bryce Canyon', ['Inspiration Point', 'Fairview Point', 'Natural Bridge', 'Ponderosa Canyon', 'Raven', 'The Whale', 'Near Inspiration Point', 'Near Sunrise Point', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Queen Trail', 'Navajo Trail', 'Near Sunset Point']],
+            pink: ['Coral Pink Sand Dunes State Park', ['', '', '', '', '', '']]
 
 
         };
@@ -39,14 +40,14 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.params = $routeParams;
 
         $scope.next = function () {
-            if ($scope.params.photoId < $scope.images[$scope.params.codeId].length) {
+            if ($scope.params.photoId < $scope.images[$scope.params.codeId][1].length) {
                 $scope.nextPhoto = (Number($scope.params.photoId) + 1).toString();
             } else {
                 $scope.nextPhoto = 1;
             }
         };
 
-    }])
+            }])
     .config(['$routeProvider', function ($routeProvider) {
         $routeProvider
             .when('/main', {
@@ -84,6 +85,5 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
                         'background': '#f5f9fa'
                     };
                 }
-                // show loading div, etc...
             });
     });
