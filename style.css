@@ -5,7 +5,6 @@ html {
     background-size: cover;
     -o-background-size: cover;
 }
-
 body {
     font-family: 'Open Sans Condensed', sans-serif !important;
     background-color: #f5f9fa;
@@ -137,4 +136,9 @@ img {
 }
 .relative {
     position: relative;
+}
+#spacer {
+    height: 50px;
+    width: 100%;
+    clear: both;
 }

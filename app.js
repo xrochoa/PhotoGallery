@@ -4,13 +4,13 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
-                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc']],
+                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc'], ['zion']],
                 suffix: 'National Park'
             },
 
             oip: {
                 name: 'Other Inspiring Places',
-                code: [['ante', 'hors', 'nava'], ['monu', 'natu', 'pink']], //update
+                code: [['ante', 'hors', 'nava'], ['monu', 'natu', 'pink'], ['hoov']], //update
                 suffix: ''
             }
         };
@@ -30,7 +30,9 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             nava: ['Navajo National Monument', ['Betatakin/Talastima Cliff Dwelling', 'Stormy Night']],
             capi: ['Capitol Reef', ['Navajo Butte', 'Behunin Cabin', 'Capitol Dome', 'Petroglyphs', 'The Castle', 'Scenic Drive', 'Scenic Drive', 'Scenic Drive', 'Chimney Rock']],
             bryc: ['Bryce Canyon', ['Inspiration Point', 'Fairview Point', 'Natural Bridge', 'Ponderosa Canyon', 'Raven', 'The Whale', 'Near Inspiration Point', 'Near Sunrise Point', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Queen Trail', 'Navajo Trail', 'Near Sunset Point']],
-            pink: ['Coral Pink Sand Dunes State Park', ['', '', '', '', '', '']]
+            pink: ['Coral Pink Sand Dunes State Park', ['', '', '', '', '', '']],
+            zion: ['Zion', ['View from Angel\'s Landing', 'Checkerboard Mesa', 'Canyon Overlook', 'Watchman', 'Altar of Sacrifice', 'Virgin River', 'Court of the Patriarchs', 'Weeping Rock', 'Sunset at Weeping Rock', 'Upper Emerald Pool', 'Middle Emerald Pool', 'Great White Throne', 'The Narrows', 'The Narrows', 'Temple of Sinawava']],
+            hoov: ['Hoover Dam', ['', '', '', '']]
 
 
         };
