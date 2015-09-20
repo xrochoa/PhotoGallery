@@ -4,7 +4,7 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
-                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc'], ['zion']],
+                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc'], ['zion', 'sequ', 'deat']],
                 suffix: 'National Park'
             },
 
@@ -19,12 +19,12 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             pinn: ['Pinnacles', ['', '', '', '', '', '']],
             josh: ['Joshua Tree', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
             gran: ['Grand Canyon', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
-            ante: ['Antelope Canyon', ['', '', '', '', '', '']],
+            ante: ['Antelope Canyon Navajo Tribal Park', ['', '', '', '', '', '']],
             mesa: ['Mesa Verde', ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House']],
             blac: ['Black Canyon of the Gunnison', ['', '', '', '', '', '']],
-            monu: ['Monument Valley Tribal Park', ['', '', '', '', '', '']],
+            monu: ['Monument Valley Navajo Tribal Park', ['', '', '', '', '', '']],
             arch: ['Arches', ['Delicate Arch', 'Three Gossips', 'The Organ', 'Sheep Rock', 'Tower of Babel', 'Balanced Rock', 'Garden of Eden', 'North and South Windows', 'Double Arch', 'Parade of Elephants', 'Sand Dune Arch', 'Park Ave', 'Landscape Arch', 'Wall near Navajo Arch', 'Double O Arch']],
-            hors: ['Horseshoe', ['Horseshoe Overlook']],
+            hors: ['Horseshoe Bend', ['']],
             cany: ['Canyonlands', ['Monument Basin', 'Shafer Canyon Overlook', 'Mesa Arch', 'Aztec Butte Grainery', 'Whale Rock', 'Upheaval Dome', 'Green River Overlook', 'Soda Springs Basin', 'Grand View Point Overlook', 'Superbowl Campground', 'Big Spring Canyon Overlook', 'Big Spring Canyon Overlook', 'Pothole Point', 'Elephant Hill Trail', 'Devils Kitchen']],
             natu: ['Natural Bridges National Monument', ['Sipapu Bridge', 'Owachomo Bridge']],
             nava: ['Navajo National Monument', ['Betatakin/Talastima Cliff Dwelling', 'Stormy Night']],
@@ -32,12 +32,14 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             bryc: ['Bryce Canyon', ['Inspiration Point', 'Fairview Point', 'Natural Bridge', 'Ponderosa Canyon', 'Raven', 'The Whale', 'Near Inspiration Point', 'Near Sunrise Point', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Navajo Trail', 'Queen Trail', 'Navajo Trail', 'Near Sunset Point']],
             pink: ['Coral Pink Sand Dunes State Park', ['', '', '', '', '', '']],
             zion: ['Zion', ['View from Angel\'s Landing', 'Checkerboard Mesa', 'Canyon Overlook', 'Watchman', 'Altar of Sacrifice', 'Virgin River', 'Court of the Patriarchs', 'Weeping Rock', 'Sunset at Weeping Rock', 'Upper Emerald Pool', 'Middle Emerald Pool', 'Great White Throne', 'The Narrows', 'The Narrows', 'Temple of Sinawava']],
-            hoov: ['Hoover Dam', ['', '', '', '']]
+            hoov: ['Hoover Dam', ['', '', '', '']],
+            deat: ['Death Valley', ['Near Grapevine', 'Dante\'s View', 'Twenty Mule Team Canyon', 'Zabriskie Point', 'Zabriskie Point', 'Harmony Borax Works', 'Mesquite Flat Sand Dunes', 'Devil\'s Golf Course', 'Badwater Basin', 'Badwater Basin', 'Artist\'s Pallette', 'Golden Canyon', 'Golden Canyon', 'Salt Creek', 'Ubehebe Crater', 'Milky Way from Emigrant', 'Mesquite Flat Sand Dunes', 'Panamint']],
+            sequ: ['Sequoia', ['View from Moro Rock', 'Milk Ranch Peak', 'Moro Rock', 'Castle Rocks', 'Smoky Sun', 'Sierra Nevada']]
 
 
         };
 
-        $scope.gallery = ['12', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4', '6', '6'];
+        $scope.gallery = ['12', '4', '4', '4', '6', '6', '4', '4', '4', '6', '6', '3', '3', '3', '3', '4', '4', '4'];
 
         $scope.params = $routeParams;
 
