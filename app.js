@@ -1,6 +1,10 @@
 angular.module("myApp", ['ngRoute', 'ngAnimate'])
-    .controller('myCtrl', ['$scope', '$routeParams', '$rootScope', function ($scope, $routeParams, $rootScope) {
+    .controller('myCtrl', ['$scope', '$routeParams', '$rootScope', '$location', '$window', function ($scope, $routeParams, $rootScope, $location, $window) {
 
+        $scope.$on('$viewContentLoaded', function(event) {
+            $window.ga('send', 'pageview', { page: $location.url() });
+        });
+  
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
