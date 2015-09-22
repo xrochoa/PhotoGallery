@@ -4,7 +4,7 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
-                code: [['deat', 'arch', 'josh'], ['yose', 'lass', 'crat'], ['zion', 'cany', 'gran'], ['mesa', 'blac', 'sequ'], ['pinn', 'capi', 'bryc'], ['redw']],
+                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc'], ['zion', 'sequ', 'deat'], ['yose', 'lass']],
                 suffix: 'National Park'
             },
 
