@@ -4,7 +4,7 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
         $scope.galleries = {
             nps: {
                 name: 'National Parks',
-                code: [['pinn', 'josh', 'gran'], ['mesa', 'blac', 'arch'], ['cany', 'capi', 'bryc'], ['zion', 'sequ', 'deat'], ['yose']],
+                code: [['deat', 'arch', 'josh'], ['yose', 'lass', 'crat'], ['zion', 'cany', 'gran'], ['mesa', 'blac', 'sequ'], ['pinn', 'capi', 'bryc'], ['redw']],
                 suffix: 'National Park'
             },
 
@@ -17,7 +17,7 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
 
         $scope.images = {
             pinn: ['Pinnacles', ['', '', '', '', '', '']],
-            josh: ['Joshua Tree', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
+            josh: ['Joshua Tree', ['Joshua Tree and Boulders', 'BLM Grounds', 'BLM Grounds', 'Park Boulevard', 'Joshua Tree and Boulders', 'Joshua Tree and Boulders', 'Hidden Valley Campground', 'Hidden Valley', 'Hidden Valley', 'Barker Dam Trail', 'Barker Dam Trail', 'Barker Dam Trail', 'Indian Cove', 'Petroglyphs', 'Cholla Cactus Garden']],
             gran: ['Grand Canyon', ['', '', '', '', '', '', '', '', '', '', '', '', '', '', '']],
             ante: ['Antelope Canyon Navajo Tribal Park', ['', '', '', '', '', '']],
             mesa: ['Mesa Verde', ['Point Lookout', 'Balcony House', 'Navajo Canyon View', 'Cliff Palace', 'Sun Point View', 'Long House']],
@@ -35,7 +35,10 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             hoov: ['Hoover Dam', ['', '', '', '']],
             deat: ['Death Valley', ['Near Grapevine', 'Dante\'s View', 'Twenty Mule Team Canyon', 'Zabriskie Point', 'Zabriskie Point', 'Harmony Borax Works', 'Mesquite Flat Sand Dunes', 'Devil\'s Golf Course', 'Badwater Basin', 'Badwater Basin', 'Artist\'s Pallette', 'Golden Canyon', 'Golden Canyon', 'Salt Creek', 'Ubehebe Crater', 'Milky Way from Emigrant', 'Mesquite Flat Sand Dunes', 'Panamint']],
             sequ: ['Sequoia', ['View from Moro Rock', 'Milk Ranch Peak', 'Moro Rock', 'Castle Rocks', 'Smoky Sun', 'Sierra Nevada']],
-            yose: ['Yosemite', ['Glacier Point', 'Tunnel View', 'El Capitan', 'Vernal Fall', 'Olmsted Point', 'Tenaya Lake', 'Lembert Dome', 'Cathedral Lake', 'Cathedral Peak']]
+            yose: ['Yosemite', ['Glacier Point', 'Tunnel View', 'El Capitan', 'Vernal Fall', 'Olmsted Point', 'Tenaya Lake', 'Lembert Dome', 'Cathedral Lake', 'Cathedral Peak']],
+            lass: ['Lassen Volcanic', ['Bumpass Hell', 'Sulphur Works', 'Lassen Peak', 'Glacier Rock', 'Chaos Crags and Jumbles', 'Cinder Cone', 'Fantastic Lava Beds', 'Painted Dunes', 'Cinder Cone']],
+            redw: ['Redwood', ['High Bluff Overlook', 'Lady Bird Johnson Grove', 'Lady Bird Johnson Grove', 'Redwood Creek Overlook', 'Fern Canyon', 'Gold Bluffs Beach', 'Roosevelt Elk', 'Big Tree Wayside', 'High Bluff Overlook']],
+            crat: ['Crater Lake', ['Wizard Island', 'Mount Thielsen', 'Devil\'s Backbone', 'The Watchman', 'Clearest Water', 'Vidae Falls', 'Pinnacles Overlook', 'Phantom Ship', 'Mount Scott']],
 
 
         };
@@ -81,7 +84,7 @@ angular.module("myApp", ['ngRoute', 'ngAnimate'])
             function (a) {
                 if (a === '/main') {
                     $rootScope.myStyle = {
-                        'background': 'url("img/arch/1.jpg") no-repeat center center fixed',
+                        'background': 'url("img/yose/1.jpg") no-repeat center center fixed',
                         'background-size': 'cover'
 
                     };
