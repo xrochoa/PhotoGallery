@@ -1,0 +1,2 @@
+<div data-dismiss="modal" aria-label="Close"><img class="close absolute" src="img/icons/close.png"></div>
+<img id="cursor-photo" src="img/highres/{{params.codeId}}/{{imageindex}}.jpg" ng-click="next()">

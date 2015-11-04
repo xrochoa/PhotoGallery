@@ -1,0 +1,13 @@
+<div class="col-xs-12 col-sm-12 thumb">
+	<h1 class="text-center">{{galleries[params.galleryId].name}}</h1>
+</div>
+<div class="col-xs-12 col-sm-12 thumb" ng-repeat="array in galleries[params.galleryId].code track by $index">
+	<div class="col-xs-4 col-sm-4 thumb" ng-repeat="code in galleries[params.galleryId].code[$index]">
+		<a class="thumbnail" href="{{params.galleryId}}/{{code}}">
+			<img class="img-responsive img" ng-src="img/thumb/{{code}}/1.jpg" alt="">
+		</a>
+		<span>{{images[code][0]}}</span>
+	</div>
+</div>
+
+<div id="spacer"></div>

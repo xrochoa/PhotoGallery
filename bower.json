@@ -1,0 +1,34 @@
+{
+  "name": "photogallery",
+  "description": "Web galery showcasing HDR photos of National Parks",
+  "main": "gulpfile.js",
+  "authors": [
+    "Xavier Reyes Ochoa"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "hdr",
+    "photos",
+    "national",
+    "parks",
+    "national",
+    "monuments"
+  ],
+  "homepage": "https://github.com/xrochoa/PhotoGallery",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-animate": "~1.4.6",
+    "angular-bootstrap": "~0.14.3",
+    "angular-route": "~1.4.6",
+    "bootstrap": "~3.3.5",
+    "angular": "~1.4.7",
+    "jquery": "~2.1.4"
+  }
+}

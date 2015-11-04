@@ -1,0 +1,23 @@
+<div class="col-xs-12 col-sm-12 thumb">
+    <h3 class="text-center">{{images[params.codeId][0]}} {{galleries[params.galleryId].suffix}}</h3>
+</div>
+
+<div class="col-xs-{{gallery[$index]}} col-sm-4 thumb" ng-repeat="image in images[params.codeId][1] track by $index">
+    <a class="thumbnail" show-modal index="{{$index}}" ng-click="updateimage($index+1)">
+        <!-- index + 1 because images are named starting in 1 -->
+        <img class="img-responsive img" ng-src="img/thumb/{{params.codeId}}/{{$index + 1}}.jpg" alt="">
+    </a>
+
+    <!-- Name of picture -->
+    <span class="hidden-xs">{{images[params.codeId][1][$index]}}</span>
+</div>
+<div id="spacer"></div>
+
+<!-- Large modal -->
+<div class="modal fade image-modal" tabindex="-1" role="dialog" aria-labelledby="Images">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div ng-include src="'views/full.html'"></div>
+        </div>
+    </div>
+</div>
