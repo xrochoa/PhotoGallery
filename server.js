@@ -3,10 +3,10 @@ var express = require('express');
 var app = express();
 
 //Serve static files = css, js, etc
-app.use('/', express.static(__dirname + '/'));
+app.use('/', express.static(__dirname + '/dist'));
 //Send to index with any route
 app.use('/', function(req, res){
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/dist/index.html');
 });
 
 
