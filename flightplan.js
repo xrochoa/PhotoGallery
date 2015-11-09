@@ -23,7 +23,9 @@ plan.target('production', [
   {
     host: '162.243.138.122', //this is my droplet from digitalocean
     username: username,
-    agent: process.env.SSH_AUTH_SOCK
+    agent: process.env.SSH_AUTH_SOCK,
+    privateKey: '/Users/Xavier/.ssh/id_rsa', //added this since it couldnt initially authenticate
+    failsafe: true //
   },
 //add in another server if you have more than one
 // {
